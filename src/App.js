@@ -2,6 +2,10 @@ import React from "react";
 import Avatar from "./Avatar";
 import Card from "./Card";
 import contacts from "./Contacts";
+function createCard(contact)
+{
+  return <Card abc={contact.id} name={contact.name} img={contact.imgURL} tel={contact.phone} email={contact.email}/>
+}
 
 function App() {
   return (
@@ -10,7 +14,7 @@ function App() {
       <Avatar
         img="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg"
       />
-      <Card
+      {/* <Card
         name={contacts[0].name}
         img={contacts[0].imgURL}
         tel={contacts[0].phone}
@@ -27,7 +31,8 @@ function App() {
         img={contacts[2].imgURL}
         tel={contacts[2].phone}
         email={contacts[2].email}
-      />
+      /> */}
+      {contacts.map(createCard)}
     </div>
   );
 }
